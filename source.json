@@ -1,0 +1,23 @@
+[
+	{
+		"fileName":"fileName1.pdf",
+		"field1":"content1",
+		"field2":"content2",
+		"field3":"content3",
+		"field4":"content4"
+	},
+	{
+		"fileName":"fileName2.pdf",
+		"field1":"content1",
+		"field2":"content2",
+		"field3":"content3",
+		"field4":"content4"
+	},
+	{
+		"fileName":"fileName3.pdf",
+		"field1":"content1",
+		"field2":"content2",
+		"field3":"content3",
+		"field4":"content4"
+	}
+]
