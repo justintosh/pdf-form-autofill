@@ -1,0 +1,14 @@
+%FDF-1.2%
+1 0 obj
+<</FDF
+  <</F({the PDF form filename, e.g. example.pdf})/Fields[
+    <</T({form field name1})/V({form field content1})>>
+    <</T({form field name2})/V(form field content2})>>
+    <</T({form field name3})/V(form field content3})>>
+    <</T({form field name4})/V(form field content4})>>
+    <</T({more fields...})/V(more contents...})>>
+  ]/UF({the PDF form filename, e.g. example.pdf})>>
+/Type/Catalog>>
+endobj
+trailer
+<</Root 1 0 R>>%%EOF
