@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://ns.adobe.com/acrobat/workflow/2012" title="Fill &amp; Flatten" description="This Action Wizard fills the fillable PDF forms in the selected directory with the data in the FDF file." majorVersion="1" minorVersion="0">
+	<Group label="Import FDF">
+		<Instruction label="This JavaScript gets the current file name, replaces the file name extension from &quot;.pdf&quot;  to &quot;.fdf&quot; which contains the form data to be filled, fills the form, and flatten the form to prevent future editing." pauseBefore="false"/>
+		<Command name="JavaScript" pauseBefore="false" promptUser="false">
+			<Items>
+				<Item name="ScriptCode" type="text" value="// Get the file name of the current PDF document&#xD;fn = documentFileName;&#xD;// Replace the file name PDF extension with the FDF extension&#xD;fn = fn.replace(/\.pdf/i, &quot;.fdf&quot;);&#xD;&#xD;// Import the FDF file&#xD;importAnFDF(fn);&#xD;&#xD;// Flatten the page to finalize the form contents and disable editing&#xD;flattenPages();"/>
+				<Item name="ScriptName" type="text" value=""/>
+			</Items>
+		</Command>
+	</Group>
+	<Group label="Rename PDF and Save">
+		<Instruction label="Saves a new version of the filled PDF form with file name suffix &quot;_flat&quot;." pauseBefore="false"/>
+		<Command name="WorkflowPlaybackSaveFiles" pauseBefore="false" promptUser="false">
+			<Items>
+				<Item name="AddToBaseName" type="boolean" value="true"/>
+				<Item name="DocSaveDestType" type="string" value="WorkflowPlaybackSave"/>
+				<Item name="DontOverwrite" type="boolean" value="true"/>
+				<Item name="EmbedIndex" type="boolean" value="false"/>
+				<Item name="FileVariation" type="integer" value="0"/>
+				<Item name="HandleOutput" type="boolean" value="true"/>
+				<Item name="InsertAfterBaseName" type="text" value="_flat"/>
+				<Item name="InsertBeforeBaseName" type="text" value=""/>
+				<Item name="NumbericNaming" type="boolean" value="false"/>
+				<Item name="OptimizePDF" type="boolean" value="true"/>
+				<Item name="PresetName" type="text" value="Standard"/>
+				<Item name="RunPDFOptimizer" type="boolean" value="false"/>
+			</Items>
+		</Command>
+	</Group>
+</Workflow>
